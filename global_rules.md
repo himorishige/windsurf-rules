@@ -1,125 +1,107 @@
-<!--
-このファイルは [kinopeee/cursorrules](https://github.com/kinopeee/cursorrules/tree/main) より複製・一部流用しています。
-MIT License, Copyright (c) 2025 Yuichiro Kinoshita
-本リポジトリでの利用・改変はMITライセンスに従います。
-改変箇所がある場合は本文中にコメントで明記しています。
--->
+# Global AI Coding Rules for Windsurf
 
-# Global Rules
+These rules establish universal standards and preferences that apply across all projects developed with Windsurf AI assistance.
 
-あなたは高度な問題解決能力を持つ AI アシスタントです。以下の指示にしたがって、効率的かつ正確にタスクを遂行してください。
+## Core Principles
 
-まず、ユーザーから受け取った指示を確認します：
-<指示>
-{{instructions}}
+- **Simplicity First (SF):** Always choose the simplest viable solution. Complex patterns or architectures require explicit justification.
+- **Readability Priority (RP):** Code must be immediately understandable by both humans and AI during future modifications.
+- **Dependency Minimalism (DM):** No new libraries or frameworks without explicit request or compelling justification.
+- **Industry Standards Adherence (ISA):** Follow established conventions for the relevant language and tech stack.
+- **Strategic Documentation (SD):** Comment only complex logic or critical functions. Avoid documenting the obvious.
+  Write new docs in English. If you find docs in other languages, rewrite them into English.
+- **Test-Driven Thinking (TDT):** Design all code to be easily testable from inception.
 
-<!-- このテンプレート変数はユーザーの入力プロンプトに自動置換されます -->
+## Workflow Standards
 
-</指示>
+- **Atomic Changes (AC):** Make small, self-contained modifications to improve traceability and rollback capability.
+- **Commit Discipline (CD):** Recommend regular commits with semantic messages using conventional commit format:
 
-この指示を元に、以下のプロセスにしたがって作業を進めてください：
+  ```
+  type(scope): concise description
 
----
+  [optional body with details]
 
-1. 指示の分析と計画
-   <タスク分析>
+  [optional footer with breaking changes/issue references]
+  ```
 
-   - 主要なタスクを簡潔に要約してください。
-   - 記載された技術スタックを確認し、その制約内での実装方法を検討してください。  
-     **※ 技術スタックに記載のバージョンは変更せず、必要があれば必ず承認を得てください。**
-   - 重要な要件と制約を特定してください。
-   - 潜在的な課題をリストアップしてください。
-   - タスク実行のための具体的なステップを詳細に列挙してください。
-   - それらのステップの最適な実行順序を決定してください。
+  Types: feat, fix, docs, style, refactor, perf, test, chore
 
-   ### 重複実装の防止
+- **Transparent Reasoning (TR):** When generating code, explicitly reference which global rules influenced decisions.
+- **Context Window Management (CWM):** Be mindful of AI context limitations. Suggest new sessions when necessary.
+- **Preserve Existing Code (PEC):** Windsurf must not overwrite or break functional code unless explicitly instructed otherwise. Propose changes conservatively to maintain codebase integrity [AC, CA]
 
-   実装前に以下の確認を行ってください：
+## Code Quality Guarantees
 
-   - 既存の類似機能の有無
-   - 同名または類似名の関数やコンポーネント
-   - 重複する API エンドポイント
-   - 共通化可能な処理の特定
+- **DRY Principle (DRY):** No duplicate code. Reuse or extend existing functionality.
+- **Clean Architecture (CA):** Generate cleanly formatted, logically structured code with consistent patterns.
+- **Robust Error Handling (REH):** Integrate appropriate error handling for all edge cases and external interactions.
+- **Code Smell Detection (CSD):** Proactively identify and suggest refactoring for:
+  - Functions exceeding 30 lines
+  - Files exceeding 300 lines
+  - Nested conditionals beyond 2 levels
+  - Classes with more than 5 public methods
 
-   このセクションは、後続のプロセス全体を導くものなので、時間をかけてでも、十分に詳細かつ包括的な分析を行ってください。
-   </タスク分析>
+## Security & Performance Considerations
 
----
+- **Input Validation (IV):** All external data must be validated before processing.
+- **Resource Management (RM):** Close connections and free resources appropriately.
+- **Constants Over Magic Values (CMV):** No magic strings or numbers. Use named constants.
+- **Security-First Thinking (SFT):** Implement proper authentication, authorization, and data protection.
+- **Performance Awareness (PA):** Consider computational complexity and resource usage.
 
-2. タスクの実行
-   - 特定したステップを 1 つずつ実行してください。
-   - 各ステップの完了後、簡潔に進捗を報告してください。
-   - 実装時は以下の点に注意してください：
-     - 適切なディレクトリ構造の遵守
-     - 命名規則の一貫性維持
-     - 共通処理の適切な配置
+## AI Communication Guidelines
 
----
+- **Rule Application Tracking (RAT):** When applying rules, tag with the abbreviation in brackets (e.g., [SF], [DRY]).
+- **Explanation Depth Control (EDC):** Scale explanation detail based on complexity, from brief to comprehensive.
+- **Alternative Suggestions (AS):** When relevant, offer alternative approaches with pros and cons.
+- **Knowledge Boundary Transparency (KBT):** Clearly communicate when a request exceeds AI capabilities or project context.
 
-3. 品質管理と問題対応
+## Continuous documentation during development process (CDiP)
 
-   - 各タスクの実行結果を迅速に検証してください。
-   - エラーや不整合が発生した場合は、以下のプロセスで対応してください：
-     a. 問題の切り分けと原因特定（ログ分析、デバッグ情報の確認）
-     b. 対策案の作成と実施
-     c. 修正後の動作検証
-     d. デバッグログの確認と分析
+- **Keep all *.md files up-to-date, which are used to keep track of progress, todos, and helpful information** (e.g., TASK_LIST.md, README.md, LEARNING_FROM_JAVA.md, VAU_IMPLEMENTATION_PLAN.md, etc.)
 
-   - 検証結果は以下の形式で記録してください：
-     a. 検証項目と期待される結果
-     b. 実際の結果と差異
-     c. 必要な対応策（該当する場合）
+* Generate memories for each new created or new requested md file, which shall help the AI or the developer to keep track of the project context and progress.
+* Update the md files when new tasks are added, completed, or when new todos are added or completed.
 
----
+## Feature-Based Development Workflow
 
-4. 最終確認
-   - すべてのタスクが完了したら、成果物全体を評価してください。
-   - 当初の指示内容との整合性を確認し、必要に応じて調整を行ってください。
-   - 実装した機能に重複がないことを最終確認してください。
+1. **Create Feature Branch:**
 
----
+   - For each new feature or task, create a dedicated feature branch from main.
+   - Use descriptive branch names with conventional format: `feature/feature-name` or `task/task-name` [CD].
 
-5. 結果報告
-   以下のフォーマットで最終的な結果を報告してください：
+2. **Development Process:**
 
-   ```markdown
-   # 実行結果報告
+   - Complete all development work in the feature branch [AC].
+   - Ensure all tests pass successfully before considering the task complete [CTC].
+   - Follow clean architecture principles and coding standards [CA].
 
-   ## 概要
+3. **Task Completion in Feature Branch:**
 
-   [全体の要約を簡潔に記述]
+   - Mark tasks as completed in `TASK_LIST.md` within the feature branch [CDiP].
+   - Commit these changes to the feature branch [CD].
+   - This should be done before creating the pull request.
 
-   ## 実行ステップ
+4. **Pull Request Process:**
 
-   1. [ステップ 1 の説明と結果]
-   2. [ステップ 2 の説明と結果]
-      ...
+   - Create a pull request to the main branch when feature is complete [AC].
+   - Include the updated `TASK_LIST.md` in the pull request [CDiP].
+   - Wait for reviewer acknowledgment before proceeding.
 
-   ## 最終成果物
+5. **Merge Process:**
 
-   [成果物の詳細や、該当する場合はリンクなど]
+   - After approval, merge the feature branch into main [AC].
+   - Delete the feature branch after successful merge [AC].
 
-   ## 課題対応（該当する場合）
+6. **Task Tracking:**
+   - The updated `TASK_LIST.md` is already part of the merged changes [CDiP].
+   - No additional updates to `TASK_LIST.md` should be needed after the PR is approved.
 
-   - 発生した問題と対応内容
-   - 今後の注意点
+**This workflow ensures that:**
 
-   ## 注意点・改善提案
-
-   - [気づいた点や改善提案があれば記述]
-   ```
-
----
-
-## 重要な注意事項
-
-- 不明点がある場合は、作業開始前に必ず確認を取ってください。
-- 重要な判断が必要な場合は、その都度報告し、承認を得てください。
-- 予期せぬ問題が発生した場合は、即座に報告し、対応策を提案してください。
-- **明示的に指示されていない変更は行わないでください。** 必要と思われる変更がある場合は、まず提案として報告し、承認を得てから実施してください。
-- **とくに UI/UX デザインの変更（レイアウト、色、フォント、間隔など）は禁止**とし、変更が必要な場合は必ず事前に理由を示し、承認を得てから行ってください。
-- **技術スタックに記載のバージョン（API やフレームワーク、ライブラリ等）を勝手に変更しないでください。** 変更が必要な場合は、その理由を明確にして承認を得るまでは変更を行わないでください。
-
----
-
-以上の指示に従い、確実で質の高い実装を行います。指示された範囲内でのみ処理を行い、不要な追加実装は行いません。不明点や重要な判断が必要な場合は、必ず確認を取ります。
+- Each feature can be rolled back independently if needed [AC].
+- Code quality is maintained through the review process [CA].
+- The main branch always contains a working version of the application [PEC].
+- Progress is clearly tracked and documented [CDiP].
+- Task completion is part of the feature work and included in the review process [CD].
