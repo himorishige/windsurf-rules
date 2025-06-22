@@ -2,6 +2,10 @@
 
 These rules establish universal standards and preferences that apply across all projects developed with Windsurf AI assistance.
 
+## AI Response Language
+
+- Japanese
+
 ## Core Principles
 
 - **Simplicity First (SF):** Always choose the simplest viable solution. Complex patterns or architectures require explicit justification.
@@ -59,7 +63,7 @@ These rules establish universal standards and preferences that apply across all 
 
 ## Continuous documentation during development process (CDiP)
 
-- **Keep all *.md files up-to-date, which are used to keep track of progress, todos, and helpful information** (e.g., TASK_LIST.md, README.md, LEARNING_FROM_JAVA.md, VAU_IMPLEMENTATION_PLAN.md, etc.)
+- **Keep all \*.md files up-to-date, which are used to keep track of progress, todos, and helpful information** (e.g., TASK_LIST.md, README.md, LEARNING_FROM_JAVA.md, VAU_IMPLEMENTATION_PLAN.md, etc.)
 
 * Generate memories for each new created or new requested md file, which shall help the AI or the developer to keep track of the project context and progress.
 * Update the md files when new tasks are added, completed, or when new todos are added or completed.

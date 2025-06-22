@@ -2,6 +2,10 @@
 
 これらのルールは、Windsurf AI の支援を受けて開発されるすべてのプロジェクトに適用される普遍的な基準と設定を定めます。
 
+## AI Response Language
+
+- 日本語
+
 ## Core Principles
 
 - **Simplicity First (SF):** 常にもっとも単純な実行可能な解決策を選択します。複雑なパターンやアーキテクチャには明確な正当化が必要です。
@@ -59,7 +63,7 @@
 
 ## 開発プロセス中の継続的ドキュメント化 (CDiP)
 
-- **進捗、TODO、および有益な情報を追跡するために使用される *.md ファイルはすべて最新の状態に保つこと** (例: TASK_LIST.md、README.md、LEARNING_FROM_JAVA.md、VAU_IMPLEMENTATION_PLAN.md など)
+- **進捗、TODO、および有益な情報を追跡するために使用される \*.md ファイルはすべて最新の状態に保つこと** (例: TASK_LIST.md、README.md、LEARNING_FROM_JAVA.md、VAU_IMPLEMENTATION_PLAN.md など)
 
 * 新しく作成された、またはリクエストされた md ファイルごとにメモリを生成し、AI または開発者がプロジェクトのコンテキストと進捗を把握できるようにします。
 * 新しいタスクが追加・完了した場合、または新しい TODO が追加・完了した場合に md ファイルを更新します。
