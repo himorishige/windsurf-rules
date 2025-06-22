@@ -41,6 +41,7 @@ globs: *.ts,*tsx
 ### Code Entities
 
 - Components: PascalCase
+- Variables: camelCase
 - Functions/Hooks: camelCase
 - Constants: UPPER_SNAKE_CASE
 - Types/Interfaces: PascalCase
