@@ -1,6 +1,6 @@
 ---
 trigger: model_decision
-description: React In-Development Reference
+description: React/Next.js In-Development Reference
 ---
 
 ## React 19 Guideline
