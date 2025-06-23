@@ -4,7 +4,7 @@ These rules establish universal standards and preferences that apply across all 
 
 ## AI Response Language
 
-- Japanese
+- Always Japanese
 
 ## Core Principles
 
@@ -17,6 +17,8 @@ These rules establish universal standards and preferences that apply across all 
 - **Test-Driven Thinking (TDT):** Design all code to be easily testable from inception.
 
 ## Workflow Standards
+
+**Follow the Feature-Based Development Workflow:**
 
 - **Atomic Changes (AC):** Make small, self-contained modifications to improve traceability and rollback capability.
 - **Commit Discipline (CD):** Recommend regular commits with semantic messages using conventional commit format:
