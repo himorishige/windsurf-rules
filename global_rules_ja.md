@@ -4,7 +4,7 @@
 
 ## AI Response Language
 
-- 日本語
+- 常に日本語を用いて回答すること
 
 ## Core Principles
 
@@ -17,6 +17,8 @@
 - **Test-Driven Thinking (TDT):** すべてのコードは最初からテストしやすいように設計します。
 
 ## Workflow Standards
+
+**Feature-Based Development Workflowに従って開発を行うこと:**
 
 - **Atomic Changes (AC):** 追跡性とロールバック能力を向上させるため、小さく自己完結した変更を行います。
 - **Commit Discipline (CD):** 次の従来のフォーマットを使用して、意味のあるメッセージで定期的にコミットすることを推奨します:
