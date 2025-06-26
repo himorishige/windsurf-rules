@@ -1,5 +1,6 @@
 ---
-trigger: manual
+trigger: model_decision
+description: TypeScript で開発中に test を実装する際に参照するガイドライン
 ---
 
 # TypeScript Test Strategy Guidelines
@@ -25,6 +26,7 @@ trigger: manual
 
 ### Pure function のテスト
 
+- Vitest を利用（vitest run を利用すること）
 - すべての boundary value をテスト
 - edge case を網羅的にカバー
 - property-based test で複雑な logic を検証
