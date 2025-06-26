@@ -49,13 +49,13 @@ description: gh CLIを使ってPRを取得し、内容を要約・レビュー�
 
 9. 上記のまとめと提案をユーザーに伝える。
 
-10. 必要に応じて、gh CLI でレビューコメントを投稿する。
+10. ユーザーの指示があった時のみ、gh CLI でレビューコメントを投稿する。
 
 ```
 gh pr review <PR番号> --comment -b "ここにレビューコメントを記載"
 ```
 
-11. レビューが完了したら、必要に応じて approve や request changes も可能。
+11. レビューが完了したら、ユーザーの指示があった時のみ approve や request changes も可能。
     `gh pr review <PR番号> --approve
 gh pr review <PR番号> --request-changes -b "修正点を記載"
    `
